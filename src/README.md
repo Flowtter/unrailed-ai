@@ -1,0 +1,2 @@
+﻿The "debug.py" file is a file that I used to create the AI, I left it to help people to fork my project, though, don't use any functions created here outside of the file.
+Some functions might be outdated and need some quick fixes.

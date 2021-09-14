@@ -1,0 +1,77 @@
+import cv2
+import numpy as np
+
+
+AXE_TEMPLATE = cv2.imread("template_axe.png", cv2.IMREAD_GRAYSCALE)
+PICKAXE_TEMPLATE = cv2.imread("template_pickaxe.png", cv2.IMREAD_GRAYSCALE)
+
+AXE_TRESH = 0.65
+PICKAXE_TRESH = 0.60
+
+# magic values for rocks
+HSV_MIN_THRESH_BROCK_1 = np.array([0, 0, 0])
+HSV_MAX_THRESH_BROCK_1 = np.array([5, 25, 63])
+
+HSV_MIN_THRESH_BROCK_2 = np.array([0, 0, 65])
+HSV_MAX_THRESH_BROCK_2 = np.array([5, 25, 255])
+
+HSV_BROCK = [(HSV_MIN_THRESH_BROCK_1, HSV_MAX_THRESH_BROCK_1),
+             (HSV_MIN_THRESH_BROCK_2, HSV_MAX_THRESH_BROCK_2)]
+
+# magic values for the map
+HSV_MIN_THRESH_MAP_1 = np.array([40, 110, 80])
+HSV_MAX_THRESH_MAP_1 = np.array([73, 176, 255])
+
+HSV_MIN_THRESH_MAP_2 = np.array([0, 50, 50])
+HSV_MAX_THRESH_MAP_2 = np.array([10, 255, 255])
+
+HSV_MIN_THRESH_MAP_3 = np.array([16, 130, 100])
+HSV_MAX_THRESH_MAP_3 = np.array([16, 140, 150])
+
+HSV_MIN_THRESH_MAP_4 = np.array([16, 0, 0])
+HSV_MAX_THRESH_MAP_4 = np.array([16, 255, 255])
+
+HSV_MAP = [(HSV_MIN_THRESH_MAP_1, HSV_MAX_THRESH_MAP_1), (HSV_MIN_THRESH_MAP_2, HSV_MAX_THRESH_MAP_2),
+           (HSV_MIN_THRESH_MAP_3, HSV_MAX_THRESH_MAP_3), (HSV_MIN_THRESH_MAP_4, HSV_MAX_THRESH_MAP_4)]
+
+# magic values for the player
+HSV_MIN_THRESH_PLAYER_1 = np.array([1, 180, 150])
+HSV_MAX_THRESH_PLAYER_1 = np.array([5, 220, 255])
+
+HSV_PLAYER = [(HSV_MIN_THRESH_PLAYER_1, HSV_MAX_THRESH_PLAYER_1)]
+
+# magic values for river
+HSV_MIN_THRESH_RIVER_1 = np.array([20, 150, 150])
+HSV_MAX_THRESH_RIVER_1 = np.array([35, 210, 255])
+
+HSV_MIN_THRESH_RIVER_2 = np.array([82, 0, 150])
+HSV_MAX_THRESH_RIVER_2 = np.array([90, 200, 255])
+
+HSV_RIVER = [(HSV_MIN_THRESH_RIVER_1, HSV_MAX_THRESH_RIVER_1),
+             (HSV_MIN_THRESH_RIVER_2, HSV_MAX_THRESH_RIVER_2)]
+
+# magic values for rocks
+HSV_MIN_THRESH_ROCK_1 = np.array([14, 80, 100])
+HSV_MAX_THRESH_ROCK_1 = np.array([16, 100, 200])
+
+HSV_MIN_THRESH_ROCK_2 = np.array([16, 0, 0])
+HSV_MAX_THRESH_ROCK_2 = np.array([16, 255, 255])
+
+HSV_ROCK = [(HSV_MIN_THRESH_ROCK_1, HSV_MAX_THRESH_ROCK_1),
+            (HSV_MIN_THRESH_ROCK_2, HSV_MAX_THRESH_ROCK_2)]
+
+# magic values for the terrain
+HSV_MIN_THRESH_TERRAIN_1 = np.array([0, 0, 65])
+HSV_MAX_THRESH_TERRAIN_1 = np.array([180, 255, 255])
+
+HSV_MIN_THRESH_TERRAIN_2 = np.array([0, 0, 0])
+HSV_MAX_THRESH_TERRAIN_2 = np.array([180, 255, 63])
+
+HSV_TERRAIN = [(HSV_MIN_THRESH_TERRAIN_1, HSV_MAX_THRESH_TERRAIN_1),
+               (HSV_MIN_THRESH_TERRAIN_2, HSV_MAX_THRESH_TERRAIN_2)]
+
+# magic values for trees and grass
+HSV_MIN_THRESH_TREES_1 = np.array([40, 155, 100])
+HSV_MAX_THRESH_TREES_1 = np.array([80, 186, 255])
+
+HSV_TREES = [(HSV_MIN_THRESH_TREES_1, HSV_MAX_THRESH_TREES_1)]
